@@ -1,0 +1,399 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Maven+Pro&display=swap");
+
+@import "null.scss";
+@import "mixin.scss";
+
+.header {
+   background-color: #323232;
+   &__container {
+      max-width: 530px;
+      margin: 0 auto;
+      padding: 0 15px;
+   }
+
+   &__row {
+      padding-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+
+   &__menu {
+   }
+
+   &__list {
+      display: flex;
+   }
+   &__list li {
+      @include adaptive_padding_right(37, 15);
+   }
+   &__list li:last-child {
+      padding: 0;
+   }
+   &__link {
+      font-family: Lato;
+      @include adaptive_font(12, 8.5);
+      color: #fff;
+      font-weight: 700;
+      transition: all 0.5s ease 0s;
+   }
+
+   &__link:hover {
+      color: #2eb398;
+      transition: all 0.5s ease 0s;
+   }
+
+   &__logo {
+      @include adaptive_padding_right(37, 15);
+      @include adaptive_padding_left(37, 15);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+   &__logo::after {
+      content: "";
+      width: 0;
+      height: 0;
+      top: 54px;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-top: 30px solid #323232;
+      position: absolute;
+   }
+}
+.container {
+   max-width: 1030px;
+   margin: 0 auto;
+   padding: 0px 15px;
+}
+
+.hexagons {
+   @include adaptive_padding_top(65, 40);
+   @include adaptive_padding_bottom(65, 40);
+}
+
+#hexGrid {
+   display: flex;
+   flex-wrap: wrap;
+   width: 90%;
+   margin: 0 auto;
+   overflow: hidden;
+   font-family: "Raleway", sans-serif;
+   font-size: 15px;
+   list-style-type: none;
+}
+
+.hex {
+   position: relative;
+   visibility: hidden;
+   outline: 1px solid transparent;
+}
+.hex::after {
+   content: "";
+   display: block;
+   padding-bottom: 86.602%;
+}
+.hexIn {
+   position: absolute;
+   width: 96%;
+   padding-bottom: 110.851%;
+   margin: 0 2%;
+   overflow: hidden;
+   visibility: hidden;
+   outline: 1px solid transparent;
+   -webkit-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+   -ms-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+   transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+}
+.hexIn * {
+   position: absolute;
+   visibility: visible;
+   outline: 1px solid transparent;
+}
+.hexLink {
+   display: block;
+   width: 100%;
+   height: 100%;
+   text-align: center;
+   color: #fff;
+   overflow: hidden;
+   -webkit-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+   -ms-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+   transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+}
+
+.hex img {
+   left: -100%;
+   right: -100%;
+   width: auto;
+   height: 100%;
+   margin: 0 auto;
+   -webkit-transform: rotate3d(0, 0, 0, 0deg);
+   -ms-transform: rotate3d(0, 0, 0, 0deg);
+   transform: rotate3d(0, 0, 0, 0deg);
+}
+
+@media (min-width: 1201px) {
+   #hexGrid {
+      padding-bottom: 4.4%;
+   }
+   .hex {
+      width: 20%;
+   }
+   .hex:nth-child(9n + 6) {
+      margin-left: 10%;
+   }
+}
+
+@media (max-width: 1200px) and (min-width: 901px) {
+   #hexGrid {
+      padding-bottom: 5.5%;
+   }
+   .hex {
+      width: 25%;
+   }
+   .hex:nth-child(7n + 5) {
+      margin-left: 12.5%;
+   }
+}
+
+@media (max-width: 900px) and (min-width: 601px) {
+   #hexGrid {
+      padding-bottom: 7.4%;
+   }
+   .hex {
+      width: 33.333%;
+   }
+   .hex:nth-child(5n + 4) {
+      margin-left: 16.666%;
+   }
+}
+
+@media (max-width: 600px) {
+   #hexGrid {
+      padding-bottom: 11.2%;
+   }
+   .hex {
+      width: 50%;
+   }
+   .hex:nth-child(3n + 3) {
+      margin-left: 25%;
+   }
+}
+.container_hexagons {
+   max-width: 1250px;
+   margin: 0 auto;
+}
+
+.about {
+   background-color: #2eb398;
+   &__row {
+      display: flex;
+      @include adaptive_padding_top(70, 30);
+      @include adaptive_padding_bottom(70, 30);
+      align-items: center;
+      @media (max-width: 650px) {
+         flex-direction: column;
+         text-align: center;
+      }
+   }
+
+   &__left {
+      @include adaptive_padding_right(21, 17);
+      @media (max-width: 650px) {
+         padding: 0px;
+      }
+   }
+
+   &__img {
+   }
+
+   &__right {
+   }
+}
+
+.about-item {
+   &__body {
+   }
+
+   &__name {
+      font-family: "Maven Pro";
+      font-weight: 400;
+      color: #d7fcf5;
+      @include adaptive_font(30, 20);
+   }
+
+   &__jobtitle {
+      font-family: "Maven Pro";
+      @include adaptive_font(18, 15);
+      font-weight: 400;
+      color: #20816d;
+      @include adaptive_padding_top(10, 9);
+      @include adaptive_padding_bottom(20, 15);
+   }
+
+   &__text {
+      font-family: Lato;
+      font-size: 12px;
+      @include adaptive_line_height(21, 14);
+      font-weight: 400;
+      color: #d7fcf5;
+   }
+
+   &__links {
+      display: flex;
+      justify-content: flex-end;
+      @include adaptive_padding_top(40, 20);
+      @media (max-width: 650px) {
+         justify-content: center;
+      }
+   }
+}
+
+.contact {
+   @include adaptive_padding_bottom(65, 35);
+   @include adaptive_padding_top(65, 35);
+   background-color: #323232;
+   &__top {
+      @include adaptive_padding_bottom(20, 15);
+   }
+
+   &__title {
+      font-family: "Maven Pro";
+      @include adaptive_font(30, 20);
+      font-weight: 400;
+      color: #e0e0e0;
+      @include adaptive_padding_bottom(8, 6);
+   }
+
+   &__subtitle {
+      font-family: "Maven Pro";
+      @include adaptive_font(18, 15);
+      font-weight: 400;
+      color: #bebebe;
+   }
+
+   &__row {
+      display: flex;
+      @media (max-width: 750px) {
+         flex-direction: column;
+      }
+   }
+
+   &__left {
+      @include adaptive_padding_right(20, 15);
+      flex: 1 1 auto;
+      @media (max-width: 750px) {
+         padding: 0;
+         width: 100%;
+      }
+   }
+
+   &__right {
+      flex: 0 0 20%;
+      @media (max-width: 750px) {
+         width: 200px;
+         @include adaptive_padding_top(20, 10);
+      }
+   }
+
+   &__text,
+   &__info li {
+      font-family: Lato;
+      font-size: 12px;
+      line-height: 21px;
+      font-weight: 400;
+      color: #bebebe;
+   }
+   &__text span {
+      font-weight: 900;
+      color: #e0e0e0;
+   }
+   &__info {
+      @include adaptive_padding_top(46, 30);
+   }
+   &__info li {
+      padding-left: 20px;
+   }
+   &__info li:nth-child(1) {
+      background: url("../../img/contact/01.png") no-repeat 4px 5px;
+   }
+   &__info li:nth-child(2) {
+      background: url("../../img/contact/02.png") no-repeat 1px 5px;
+   }
+   &__info li:nth-child(3) {
+      background: url("../../img/contact/03.png") no-repeat 0px 7px;
+   }
+}
+.container {
+}
+.contact-item {
+   &__body {
+      display: flex;
+      flex-direction: column;
+   }
+
+   &__input {
+      @include adaptive_padding_bottom(16, 12);
+   }
+
+   &__textarea {
+      @include adaptive_padding_bottom(16, 12);
+      height: 150px;
+   }
+
+   &__button {
+      align-self: flex-end;
+      @media (max-width: 750px) {
+         align-self: center;
+      }
+   }
+   &__button button {
+      font-family: Lato;
+      font-size: 12px;
+      font-weight: 700;
+      color: #d7fcf5;
+      background-color: #2eb398;
+      padding: 14px 30px;
+      @include adaptive_padding_top(14, 10);
+      @include adaptive_padding_bottom(14, 10);
+      @include adaptive_padding_left(30, 22);
+      @include adaptive_padding_right(30, 22);
+      transition: all 0.5s ease 0s;
+   }
+   &__button button:hover {
+      background-color: #575b86;
+      transition: all 0.5s ease 0s;
+   }
+   input,
+   textarea {
+      font-family: Lato;
+      font-size: 12px;
+      font-weight: 400;
+      color: #bebebe;
+      @include adaptive_padding_top(15, 12);
+      @include adaptive_padding_bottom(15, 12);
+      @include adaptive_padding_left(15, 12);
+      @include adaptive_padding_right(15, 12);
+      background-color: #454545;
+      height: 100%;
+      width: 100%;
+   }
+}
+
+.footer {
+   background-color: #222222;
+   &__row {
+      @include adaptive_padding_top(16, 14);
+      @include adaptive_padding_bottom(16, 14);
+   }
+
+   &__text {
+      font-family: "Maven Pro";
+      font-size: 12px;
+      font-weight: 400;
+      color: #454545;
+   }
+}
